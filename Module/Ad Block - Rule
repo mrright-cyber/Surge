@@ -1,6 +1,7 @@
 #!name=Ad Block
 #!desc=Rule
 
+[Rule]
 DOMAIN-SUFFIX,weibomingzi.com,REJECT
 DOMAIN-SUFFIX,zymo.mps.weibo.com,REJECT
 DOMAIN-SUFFIX,sdkapp.uve.weibo.com,REJECT
