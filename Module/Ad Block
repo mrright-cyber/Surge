@@ -1,7 +1,8 @@
 #!name=Ad Block
 #!desc=Rule-SET Module. — Advertising & Anti-Hijacking.
 
-[Rule]
+
+[URL Rewrite]
 ^https?:\/\/api\.21jingji\.com\/ad\/ - reject
 ^https?:\/\/mobi\.360doc\.com\/v\d{2}\/Ajax\/festival\.ashx\?op=getfestivaltheme - reject
 ^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv)\/ - reject
