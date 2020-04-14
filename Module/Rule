@@ -1,5 +1,6 @@
-#!name=Ad Block
-#!desc=Rule
+#!name=Rule
+#!desc=Ad Block
+
 
 [Rule]
 DOMAIN-SUFFIX,weibomingzi.com,REJECT
