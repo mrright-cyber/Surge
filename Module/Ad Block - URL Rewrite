@@ -1,6 +1,5 @@
 #!name=Ad Block
-#!desc=Rule-SET Module. — Advertising & Anti-Hijacking.
-
+#!desc=URL Rewrite
 
 [URL Rewrite]
 ^https?:\/\/api\.21jingji\.com\/ad\/ - reject
