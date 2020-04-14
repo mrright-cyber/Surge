@@ -1,5 +1,5 @@
 #!name=MitM Hostname
-#!desc=By lhie1
+#!desc=MitM
 #!system=ios
 
 [MITM]
