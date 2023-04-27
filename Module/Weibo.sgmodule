@@ -48,11 +48,6 @@ URL-REGEX,^https?:\/\/wx[0-9]\.sinaimg\.cn\/large\/.+\.gif$,REJECT
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json"
 
 # > 微博@https://raw.githubusercontent.com/xOS/Config/Her/Module/General/Weibo.sgmodule
-## > 以为均为微博会员等内容，非必要
-#^https?:\/\/h5\.sinaimg\.cn\/upload\/.+\/fhy_dongtu\.gif$ data="https://hub.nange.cn/Mock/Weibo/hy_dongtu.gif"
-#^https?:\/\/h5\.sinaimg\.cn\/upload\/.+\/bianjijiantou\.png$ data="https://hub.nange.cn/Mock/Weibo/jiantougaocheng.png"
-#^https?:\/\/h5\.sinaimg\.cn\/upload\/.+\/Vip\.png$ data="https://hub.nange.cn/Mock/Weibo/avatar_vip_golden.png"
-#^https?:\/\/h5\.sinaimg\.cn\/upload\/.+\/vip[0-9]_default\.png$ data="https://hub.nange.cn/Mock/Weibo/feed_icon_100vip_7_default.png"
 
 ## > 微博订单
 ^https?:\/\/shop\.sc\.weibo\.com\/aj\/h5\/order\/menulist data="https://hub.nange.cn/Mock/Blank/Blank_Dict.json"
@@ -65,8 +60,6 @@ URL-REGEX,^https?:\/\/wx[0-9]\.sinaimg\.cn\/large\/.+\.gif$,REJECT
 ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/unread_hot_timeline\?gsid= data="https://hub.nange.cn/Mock/Blank/Blank_Dict.json"
 ## > 获取设备型号
 ^https?:\/\/m?api\.weibo\.c(n|om)\/device\/get data="https://hub.nange.cn/Mock/Weibo/getDevice.json"
-## > 微博发现
-#^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/container_discover\?gsid= data="https://hub.nange.cn/Mock/Blank/Blank_Dict.json"
 ## > 微博话题按钮红点
 ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/huati\/discovery_home_bottom_getdotinfo data="https://hub.nange.cn/Mock/Blank/Blank_Dict.json"
 ## > 微博超话看帖
