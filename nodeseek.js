@@ -50,7 +50,7 @@ if (isGetHeader) {
     $done({});
   }
 } else {
-  // 🔹 读取已保存指定 headers，重放签到请求：https://www.nodeseek.com/api/attendance?random=true
+  // 🔹 读取已保存指定 headers，重放签到请求
   const raw = $prefs.valueForKey(NS_HEADER_KEY);
   if (!raw) {
     $notify("NS签到结果", "无法签到", "本地没有已保存的请求头，请先抓包访问一次 个人页面。");
@@ -60,36 +60,31 @@ if (isGetHeader) {
   let savedHeaders = {};
   try {
     savedHeaders = JSON.parse(raw) || {};
-  //} catch (e) {
-  //  console.log("[NS] parse saved headers failed:", e);
+  } catch (e) {
+    console.log("[NS] parse saved headers failed:", e);
     $notify("NS签到结果", "无法签到", "本地保存的请求头数据损坏，请重新访问一次个人页面。");
     $done();
-  // }
+  }
 
   const url = `https://www.nodeseek.com/api/attendance?random=true`;
   const method = `POST`;
 
   const headers = {
     Connection: savedHeaders["Connection"] || `keep-alive`,
-    "Accept-Encoding":
-      savedHeaders["Accept-Encoding"] || `gzip, deflate, br`,
+    "Accept-Encoding": savedHeaders["Accept-Encoding"] || `gzip, deflate, br`,
     Priority: savedHeaders["Priority"] || `u=3, i`,
-    "Content-Type":
-      savedHeaders["Content-Type"] || `text/plain;charset=UTF-8`,
+    "Content-Type": savedHeaders["Content-Type"] || `text/plain;charset=UTF-8`,
     Origin: savedHeaders["Origin"] || `https://www.nodeseek.com`,
     "refract-sign": savedHeaders["refract-sign"] || ``,
     "User-Agent":
       savedHeaders["User-Agent"] ||
-      `Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7.2 Mobile/15E148 Safari/604.1`,
+      `Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1`,
     "refract-key": savedHeaders["refract-key"] || ``,
     "Sec-Fetch-Mode": savedHeaders["Sec-Fetch-Mode"] || `cors`,
     Cookie: savedHeaders["Cookie"] || ``,
     Host: savedHeaders["Host"] || `www.nodeseek.com`,
-    Referer:
-      savedHeaders["Referer"] ||
-      `https://www.nodeseek.com/sw.js?v=0.3.33`,
-    "Accept-Language":
-      savedHeaders["Accept-Language"] || `zh-CN,zh-Hans;q=0.9`,
+    Referer: savedHeaders["Referer"] || `https://www.nodeseek.com/`,
+    "Accept-Language": savedHeaders["Accept-Language"] || `zh-CN,zh-Hans;q=0.9`,
     Accept: savedHeaders["Accept"] || `*/*`,
   };
 
@@ -117,9 +112,7 @@ if (isGetHeader) {
       }
 
       if (status === 403) {
-        const content = `暂时被风控，稍后再试\n${
-          msg ? `内容：${msg}` : `响应体：${body}`
-        }`;
+        const content = `暂时被风控，稍后再试\n${msg ? `内容：${msg}` : `响应体：${body}`}`;
         console.log(`[NS签到] notify(403): ${content}`);
         $notify("NS签到结果", "403 风控", content);
       } else if (status === 500) {
