@@ -1,9 +1,10 @@
 #!name = telegram 跳转
 #!desc = 将 t.me / telegram.me 302 到选择的客户端
-#!author = 
+#!category = 工具
+#!author = Saul
 
 [Script]
-tme_redirect = type=http-request, pattern=^https?:\/\/t\.me\/.+, requires-body=0, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/TgRedirect.js, argument=client=Swiftgram
+tme_redirect = type=http-request, pattern=^https?:\/\/t\.me\/.+, requires-body=0, script-path=https://raw.githubusercontent.com/mrright-cyber/Surge/master/js/tgRedirect.js, argument=client=Swiftgram
 
 [MITM]
 hostname = %APPEND% t.me, telegram.me, telegram.dog
